@@ -1,0 +1,40 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const RegisterForm = ({ form, handleSubmit }) => {
+    return (
+        <div>
+            <h2>Register</h2>
+            <form onSubmit={handleSubmit}>
+                {form.username.label}<br />
+                {form.username({ size: 20 })}<br />
+                {form.username.errors && form.username.errors.map(error => (
+                    <span style={{ color: 'red' }}>{error}</span><br />
+                ))}<br />
+
+                {form.email.label}<br />
+                {form.email({ size: 30 })}<br />
+                {form.email.errors && form.email.errors.map(error => (
+                    <span style={{ color: 'red' }}>{error}</span><br />
+                ))}<br />
+
+                {form.password.label}<br />
+                {form.password({ size: 20 })}<br />
+                {form.password.errors && form.password.errors.map(error => (
+                    <span style={{ color: 'red' }}>{error}</span><br />
+                ))}<br />
+
+                {form.confirm_password.label}<br />
+                {form.confirm_password({ size: 20 })}<br />
+                {form.confirm_password.errors && form.confirm_password.errors.map(error => (
+                    <span style={{ color: 'red' }}>{error}</span><br />
+                ))}<br />
+
+                <button type="submit">{form.submit()}</button>
+            </form>
+            <p>Already have an account? <Link to="/">Login here</Link></p>
+        </div>
+    );
+};
+
+export default RegisterForm;
