@@ -1,6 +1,6 @@
 import pymysql
 
-conn = pymysql.connect(host='127.0.0.1', user ='root', password ='0000', db ='soloDB', charset ='utf8')
+conn = pymysql.connect(host='127.0.0.1', user ='root', password ='XXXX', db ='soloDB', charset ='utf8')
 
 
 cur = conn.cursor()
